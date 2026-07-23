@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="チーム分け">
+    <link rel="apple-touch-icon" href="img/アイコン.png">
+    <title>メンバー登録</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="nav-btn">チーム分け画面へ</a>
+    
+    <h1>メンバーの登録・管理</h1>
+    
+    <div class="input-group">
+        <input type="text" id="newName" placeholder="名前を入力">
+        <label class="check-label">
+            <input type="checkbox" id="isMaleCheck" style="transform:scale(1.5); accent-color: var(--primary-purple);"> 男性
+        </label>
+        <button class="btn-purple" onclick="addMember()">メンバーに追加する</button>
+    </div>
+
+    <div style="margin-bottom: 15px; text-align: center; background: #fafafa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+        <span style="font-weight:bold; margin-right:10px;">表示:</span>
+        <label style="margin-right: 10px; cursor: pointer;">
+            <input type="radio" name="genderFilter" value="all" checked onchange="renderMasterList()" style="accent-color: var(--primary-purple);"> すべて
+        </label>
+        <label style="margin-right: 10px; cursor: pointer;">
+            <input type="radio" name="genderFilter" value="1" onchange="renderMasterList()" style="accent-color: var(--primary-purple);"> 男性 🔵
+        </label>
+        <label style="cursor: pointer;">
+            <input type="radio" name="genderFilter" value="2" onchange="renderMasterList()" style="accent-color: var(--primary-purple);"> 女性 🟠
+        </label>
+    </div>
+
+    <div id="masterList" style="max-height: 400px; overflow-y: auto;"></div>
+</div>
+
+<script src="js/register.js"></script>
+</body>
+</html>

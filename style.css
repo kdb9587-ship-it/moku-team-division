@@ -1,0 +1,157 @@
+:root {
+    --primary-purple: #9b59b6;
+    --dark-purple: #8e44ad;
+    --danger: #e74c3c;
+    --bg: #f5f0f7;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 15px;
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--dark-purple);
+    margin-top: 0;
+}
+
+.nav-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    background: var(--primary-purple);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(155, 89, 182, 0.3);
+}
+
+.nav-btn:hover {
+    background: var(--dark-purple);
+}
+
+/* カウンター表示 */
+.counter-badge {
+    background: #fdfaff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 2px solid var(--primary-purple);
+}
+
+.count-num {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-purple);
+}
+
+/* 入力・ボタン */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+input[type="text"], 
+input[type="number"], 
+.btn-purple {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-purple {
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-purple:hover {
+    background: var(--dark-purple);
+}
+
+/* リスト表示 */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+/* チーム結果 */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.team-card {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-purple);
+}
+
+.team-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--dark-purple);
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 4px;
+}
+
+select {
+    appearance: none; 
+    background-color: var(--white);
+    cursor: pointer;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+select:focus {
+    border-color: var(--primary-purple);
+    outline: none;
+}

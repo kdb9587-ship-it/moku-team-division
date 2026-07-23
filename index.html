@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="チーム分け">
+    <link rel="apple-touch-icon" href="img/アイコン.png">
+    <title>ビーチバレー チーム分け</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="register.html" class="nav-btn">メンバー登録へ</a>
+    
+    <h1>チーム分け</h1>
+    
+    <div class="counter-badge">
+        参加人数：<span id="activeCount" class="count-num">0</span> 名
+    </div>
+
+    <div style="margin-bottom:20px; text-align:center; background:#fff; padding:10px; border-radius:8px;">
+        <label style="font-weight:bold; margin-right:10px;">チーム数：</label>
+        <select id="teamCountInput" style="padding:10px; font-size:1.1rem; border-radius:8px; border:1px solid #ddd; width:100px; text-align:center; accent-color: var(--primary-purple);">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+    
+    <div style="margin-bottom: 15px; text-align: center; background: #fafafa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+        <span style="font-weight:bold; margin-right:10px;">表示:</span>
+        <label style="margin-right: 10px; cursor: pointer;">
+            <input type="radio" name="indexGenderFilter" value="all" checked onchange="filterSelectionList()" style="accent-color: var(--primary-purple);"> すべて
+        </label>
+        <label style="margin-right: 10px; cursor: pointer;">
+            <input type="radio" name="indexGenderFilter" value="1" onchange="filterSelectionList()" style="accent-color: var(--primary-purple);"> 男性 🔵
+        </label>
+        <label style="cursor: pointer;">
+            <input type="radio" name="indexGenderFilter" value="2" onchange="filterSelectionList()" style="accent-color: var(--primary-purple);"> 女性 🟠
+        </label>
+    </div>
+    
+    <div id="selectionList" style="margin-bottom:20px; border-top:1px solid #eee; max-height: 300px; overflow-y: auto;"></div>
+    
+    <button class="btn-purple" style="width:100%; font-size:1.2rem; padding:15px;" onclick="generateTeams()">チームを分ける</button>
+    <div id="resultArea" class="team-grid"></div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
