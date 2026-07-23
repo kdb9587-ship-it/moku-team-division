@@ -1,7 +1,6 @@
 let masterPlayers = JSON.parse(localStorage.getItem('vb_purple_list')) || [];
 
 function updateActiveCount() {
-    // 現在の絞り込み状態（すべて/男性/女性）を取得
     const filterRadio = document.querySelector('input[name="indexGenderFilter"]:checked');
     const filterValue = filterRadio ? filterRadio.value : "all";
 
@@ -12,7 +11,6 @@ function updateActiveCount() {
         const listItem = cb.closest('.list-item');
         const itemGender = listItem.getAttribute('data-gender');
         
-        // フィルターで非表示になっている人は、参加人数のカウントや並び替え処理から除外する
         if (filterValue !== "all" && itemGender !== filterValue) {
             return; 
         }
@@ -67,7 +65,6 @@ function filterSelectionList() {
         }
     });
     
-    // 表示が切り替わったタイミングで、人数のカウントを再計算する
     updateActiveCount();
 }
 
@@ -80,13 +77,11 @@ function shuffle(array) {
 }
 
 function generateTeams() {
-    // 現在の絞り込み状態を取得
     const filterRadio = document.querySelector('input[name="indexGenderFilter"]:checked');
     const filterValue = filterRadio ? filterRadio.value : "all";
 
     const checkedIds = Array.from(document.querySelectorAll('input[name="present"]:checked')).map(el => parseInt(el.value));
     
-    // 「チェックが入っている」かつ「現在表示されている（フィルターに合致している）」人のみを対象にする
     const selectedPlayers = masterPlayers.filter(p => {
         const isChecked = checkedIds.includes(p.id);
         const isVisible = filterValue === "all" || p.gender === filterValue;

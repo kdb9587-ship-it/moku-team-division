@@ -25,12 +25,11 @@
         <button class="btn-purple" onclick="addMember()">メンバーに追加する</button>
     </div>
 
-    <div style="margin-bottom: 15px; text-align: center; background: #fafafa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
-        <span style="font-weight:bold; margin-right:10px;">表示:</span>
-        <label style="margin-right: 10px; cursor: pointer;">
+    <div style="display: flex; justify-content: space-evenly; align-items: center; margin-bottom: 15px; background: #fafafa; padding: 10px; border-radius: 8px; border: 1px solid #eee; font-size: 0.9rem;">
+        <label style="cursor: pointer;">
             <input type="radio" name="genderFilter" value="all" checked onchange="renderMasterList()" style="accent-color: var(--primary-purple);"> すべて
         </label>
-        <label style="margin-right: 10px; cursor: pointer;">
+        <label style="cursor: pointer;">
             <input type="radio" name="genderFilter" value="1" onchange="renderMasterList()" style="accent-color: var(--primary-purple);"> 男性 🔵
         </label>
         <label style="cursor: pointer;">
@@ -43,4 +42,4 @@
 
 <script src="js/register.js"></script>
 </body>
-</html>
+</html>s
